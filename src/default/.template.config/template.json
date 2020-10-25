@@ -1,0 +1,18 @@
+﻿{
+  "author": "Roman Provazník",
+  "classifications": [
+    "Web",
+    "Giraffe",
+    "Azure",
+    "Fable",
+    "Elmish"
+  ],
+  "name": "SAFEr Web App",
+  "tags": {
+    "language": "F#",
+    "type": "project"
+  },
+  "identity": "SAFEr.Template",
+  "shortName": "SAFEr",
+  "sourceName": "SAFEr.App"
+}
