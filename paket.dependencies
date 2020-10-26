@@ -1,0 +1,10 @@
+version 5.241.2
+
+source https://api.nuget.org/v3/index.json
+storage: none
+framework: netstandard2.0
+
+nuget FSharp.Core
+nuget Fake.DotNet.Cli
+nuget Fake.Core.Target
+nuget Fake.IO.FileSystem

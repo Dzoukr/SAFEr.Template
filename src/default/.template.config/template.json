@@ -5,7 +5,8 @@
     "Giraffe",
     "Azure",
     "Fable",
-    "Elmish"
+    "Elmish",
+    "Farmer"
   ],
   "name": "SAFEr Web App",
   "tags": {

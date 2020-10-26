@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>SAFEr.Template</PackageId>
+        <Version>1.0.0-beta1</Version>
+        <PackageReleaseNotes>Initial version of SAFErTemplate</PackageReleaseNotes>
+        <Authors>Roman Provazník</Authors>
+        <Description>Template for SAFEr Web App</Description>
+        <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/Dzoukr/SAFEr.Template/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageIconUrl></PackageIconUrl>
+        <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
+        <PackageTags>template;fsharp;giraffe;azure;fable;elmish;farmer</PackageTags>
+        <PackageType>Template</PackageType>
+        <NoBuild>true</NoBuild>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <!-- https://github.com/dotnet/templating/issues/2350#issuecomment-610431461 -->
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+    </PropertyGroup>
+    <PropertyGroup>
+        <ExcludeFromPackage>
+            src/*/.fake/**/*;
+            src/*/.fable/**/*;
+            src/*/node_modules/**/*;
+            src/*/src/**/obj/**/*;
+            src/*/src/**/bin/**/*;
+            src/*/tests/**/obj/**/*;
+            src/*/tests/**/bin/**/*;
+            src/*/packages/**/*;
+            src/*/paket-files/**/*;
+            src/*/publish
+        </ExcludeFromPackage>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="src/**/*.*" Exclude="$(ExcludeFromPackage)" >
+            <PackagePath>content\</PackagePath>
+        </Content>
+    </ItemGroup>
+</Project>
