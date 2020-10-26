@@ -6,6 +6,8 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SAFEr.App.Shared", "src\def
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SAFEr.App.Server", "src\default\src\SAFEr.App.Server\SAFEr.App.Server.fsproj", "{347BF041-4069-4799-85CB-21CEA108DB3C}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SAFEr.App.Infrastructure", "src\default\tools\SAFEr.App.Infrastructure\SAFEr.App.Infrastructure.fsproj", "{CD5E0413-0318-4FE3-8F19-B73470320FF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{347BF041-4069-4799-85CB-21CEA108DB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{347BF041-4069-4799-85CB-21CEA108DB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{347BF041-4069-4799-85CB-21CEA108DB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5E0413-0318-4FE3-8F19-B73470320FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5E0413-0318-4FE3-8F19-B73470320FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5E0413-0318-4FE3-8F19-B73470320FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5E0413-0318-4FE3-8F19-B73470320FF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

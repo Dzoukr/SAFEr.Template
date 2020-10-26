@@ -44,7 +44,7 @@ let toolsDir = Path.getFullName "tools"
 let clientSrcPath = srcDir </> "SAFEr.App.Client"
 let serverSrcPath = srcDir </> "SAFEr.App.Server"
 let appPublishPath = publishDir </> "app"
-let infrastructureSrcPath = toolsDir </> "infrastructure"
+let infrastructureSrcPath = toolsDir </> "SAFEr.App.Infrastructure"
 let infrastructurePublishPath = publishDir </> "infrastructure"
 
 // Targets

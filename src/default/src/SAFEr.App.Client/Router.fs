@@ -14,11 +14,11 @@ module Page =
 
     let parseFromUrlSegments = function
         | [ "about" ] -> Page.About
-        | [ "" ] -> Page.Home
+        | [ ] -> Page.Home
         | _ -> defaultPage
 
     let toUrlSegments = function
-        | Page.Home -> [ "" ]
+        | Page.Home -> [ ]
         | Page.About -> [ "about" ]
 
 
