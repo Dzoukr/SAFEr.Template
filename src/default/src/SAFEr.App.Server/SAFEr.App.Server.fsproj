@@ -3,14 +3,10 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <EnableDefaultContentItems>false</EnableDefaultContentItems>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="appsettings.development.json" Condition="Exists('appsettings.development.json')">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </Content>
     <Compile Include="WebApp.fs" />
+    <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>

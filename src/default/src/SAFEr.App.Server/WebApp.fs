@@ -1,14 +1,13 @@
 ﻿module SAFEr.App.Server.WebApp
 
 open Giraffe
-open System.IO
 open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
 open SAFEr.App.Shared.Communication
 open FSharp.Control.Tasks.V2
 
 let service = {
-    GetMessage = fun _ -> task { return "Hi from Server" } |> Async.AwaitTask
+    GetMessage = fun _ -> task { return "Hi from Server!" } |> Async.AwaitTask
 }
 
 let webApp : HttpHandler =
