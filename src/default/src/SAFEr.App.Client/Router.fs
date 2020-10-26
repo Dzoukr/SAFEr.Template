@@ -1,19 +1,25 @@
 ﻿module SAFEr.App.Client.Router
 
 open Browser.Types
-open Domain
 open Feliz.Router
 open Fable.Core.JsInterop
+
+type Page =
+    | Home
+    | About
 
 [<RequireQualifiedAccess>]
 module Page =
     let defaultPage = Page.Home
 
     let parseFromUrlSegments = function
+        | [ "about" ] -> Page.About
+        | [ "" ] -> Page.Home
         | _ -> defaultPage
 
     let toUrlSegments = function
-        | Page.Home -> [ "home" ]
+        | Page.Home -> [ "" ]
+        | Page.About -> [ "about" ]
 
 
 [<RequireQualifiedAccess>]

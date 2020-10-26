@@ -8,8 +8,9 @@ open Feliz.Router
 let init () =
     let nextPage = (Router.currentPath() |> Page.parseFromUrlSegments)
     {
-        CurrentPage = Page.defaultPage
-    }, (nextPage |> UrlChanged |> Cmd.ofMsg)
+        CurrentPage = nextPage
+    },
+        Cmd.ofSub (fun _ -> Router.navigatePage nextPage)
 
 let update (msg:Msg) (model:Model): Model * Cmd<Msg> =
     match msg with

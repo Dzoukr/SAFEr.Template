@@ -2,16 +2,22 @@
 
 open Domain
 open Feliz
-open Feliz.Bulma
 open Router
-open Feliz.Router
+open SharedView
 
 let view (model:Model) (dispatch:Msg -> unit) =
+    let navigation =
+        Html.div [
+            Html.aRouted "Home" Page.Home
+            Html.span " | "
+            Html.aRouted "About" Page.About
+        ]
     let render =
         match model.CurrentPage with
-        | Home -> Pages.Home.View.view ()
+        | Page.Home -> Pages.Home.View.view ()
+        | Page.About -> Html.text "SAFEr Template"
     React.router [
         router.pathMode
         router.onUrlChanged (Page.parseFromUrlSegments >> UrlChanged >> dispatch)
-        router.children render
+        router.children [ navigation; render ]
     ]

@@ -1,7 +1,6 @@
 ﻿module SAFEr.App.Client.Domain
 
-type Page =
-    | Home
+open Router
 
 type Model = {
     CurrentPage : Page

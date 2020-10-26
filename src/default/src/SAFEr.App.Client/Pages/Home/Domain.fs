@@ -1,8 +1,9 @@
 ﻿module SAFEr.App.Client.Pages.Home.Domain
 
 type Model = {
-    ChangeMe : string
+    Message : string
 }
 
 type Msg =
-    | Loaded
+    | GetMessage
+    | GotMessage of string
