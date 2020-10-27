@@ -1,4 +1,4 @@
-﻿module SAFEr.App.Client.Pages.Home.View
+﻿module SAFEr.App.Client.Pages.Index.View
 
 open Feliz
 open Feliz.Bulma

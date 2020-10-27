@@ -1,4 +1,4 @@
-﻿module SAFEr.App.Client.Pages.Home.Domain
+﻿module SAFEr.App.Client.Pages.Index.Domain
 
 type Model = {
     Message : string

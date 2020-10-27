@@ -8,13 +8,13 @@ open SharedView
 let view (model:Model) (dispatch:Msg -> unit) =
     let navigation =
         Html.div [
-            Html.aRouted "Home" Page.Home
+            Html.aRouted "Home" Page.Index
             Html.span " | "
             Html.aRouted "About" Page.About
         ]
     let render =
         match model.CurrentPage with
-        | Page.Home -> Pages.Home.View.view ()
+        | Page.Index -> Pages.Index.View.view ()
         | Page.About -> Html.text "SAFEr Template"
     React.router [
         router.pathMode

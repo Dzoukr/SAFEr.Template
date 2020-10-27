@@ -1,4 +1,4 @@
-﻿module SAFEr.App.Client.Pages.Home.State
+﻿module SAFEr.App.Client.Pages.Index.State
 
 open Domain
 open Elmish

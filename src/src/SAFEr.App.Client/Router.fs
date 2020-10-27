@@ -5,20 +5,20 @@ open Feliz.Router
 open Fable.Core.JsInterop
 
 type Page =
-    | Home
+    | Index
     | About
 
 [<RequireQualifiedAccess>]
 module Page =
-    let defaultPage = Page.Home
+    let defaultPage = Page.Index
 
     let parseFromUrlSegments = function
         | [ "about" ] -> Page.About
-        | [ ] -> Page.Home
+        | [ ] -> Page.Index
         | _ -> defaultPage
 
     let toUrlSegments = function
-        | Page.Home -> [ ]
+        | Page.Index -> [ ]
         | Page.About -> [ "about" ]
 
 
