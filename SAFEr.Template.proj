@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.0.0</Version>
-        <PackageReleaseNotes>Initial version of SAFErTemplate</PackageReleaseNotes>
+        <Version>1.1.1</Version>
+        <PackageReleaseNotes>Added Sln file on template level</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
@@ -19,21 +19,24 @@
     </PropertyGroup>
     <PropertyGroup>
         <ExcludeFromPackage>
-            src/*/.fake/**/*;
-            src/*/.fable/**/*;
-            src/*/node_modules/**/*;
-            src/*/src/**/obj/**/*;
-            src/*/src/**/bin/**/*;
-            src/*/tests/**/obj/**/*;
-            src/*/tests/**/bin/**/*;
-            src/*/packages/**/*;
-            src/*/paket-files/**/*;
-            src/*/publish
+            **/.fake/**/*;
+            **/.fable/**/*;
+            **/.idea/**/*;
+            **/node_modules/**/*;
+            **/src/**/obj/**/*;
+            **/src/**/bin/**/*;
+            **/tests/**/obj/**/*;
+            **/tests/**/bin/**/*;
+            **/tools/**/obj/**/*;
+            **/tools/**/bin/**/*;
+            **/packages/**/*;
+            **/paket-files/**/*;
+            **/publish
         </ExcludeFromPackage>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="src/**/*.*" Exclude="$(ExcludeFromPackage)" >
-            <PackagePath>content\</PackagePath>
+            <PackagePath>content</PackagePath>
         </Content>
     </ItemGroup>
 </Project>
