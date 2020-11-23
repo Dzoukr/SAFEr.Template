@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.3</Version>
+        <Version>1.3.1</Version>
         <PackageReleaseNotes>Using Fable as dotnet tool + simplifying pages</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
@@ -32,7 +32,7 @@
             **/tools/**/bin/**/*;
             **/packages/**/*;
             **/paket-files/**/*;
-            **/publish
+            **/publish/**
         </ExcludeFromPackage>
     </PropertyGroup>
     <ItemGroup>
