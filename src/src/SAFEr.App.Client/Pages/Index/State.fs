@@ -1,8 +1,15 @@
 ﻿module SAFEr.App.Client.Pages.Index.State
 
-open Domain
 open Elmish
 open SAFEr.App.Client
+
+type Model = {
+    Message : string
+}
+
+type Msg =
+    | GetMessage
+    | GotMessage of string
 
 let init () = { Message = "Click me!" }, Cmd.none
 

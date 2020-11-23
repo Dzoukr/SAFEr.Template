@@ -38,18 +38,18 @@ module Tools =
     let node = runTool (findTool "node" "node.exe")
     let yarn = runTool (findTool "yarn" "yarn.cmd")
 
-let publishDir = Path.getFullName "publish"
-let srcDir = Path.getFullName "src"
-let toolsDir = Path.getFullName "tools"
-let clientSrcPath = srcDir </> "SAFEr.App.Client"
-let serverSrcPath = srcDir </> "SAFEr.App.Server"
-let appPublishPath = publishDir </> "app"
-let infrastructureSrcPath = toolsDir </> "SAFEr.App.Infrastructure"
-let infrastructurePublishPath = publishDir </> "infrastructure"
+let publishPath = Path.getFullName "publish"
+let srcPath = Path.getFullName "src"
+let toolsPath = Path.getFullName "tools"
+let clientSrcPath = srcPath </> "SAFEr.App.Client"
+let serverSrcPath = srcPath </> "SAFEr.App.Server"
+let appPublishPath = publishPath </> "app"
+let fableBuildPath = clientSrcPath </> ".fable-build"
+let infrastructureSrcPath = toolsPath </> "SAFEr.App.Infrastructure"
+let infrastructurePublishPath = publishPath </> "infrastructure"
 
 // Targets
 let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
-
 
 Target.create "InstallClient" (fun _ ->
     printfn "Node version:"
@@ -59,12 +59,12 @@ Target.create "InstallClient" (fun _ ->
     Tools.yarn "install --frozen-lockfile" clientSrcPath
 )
 
-
 Target.create "Publish" (fun _ ->
     [ appPublishPath ] |> Shell.cleanDirs
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     Tools.dotnet publishArgs serverSrcPath
-    Tools.yarn "webpack-cli -p" __SOURCE_DIRECTORY__
+    [ appPublishPath </> "appsettings.Development.json" ] |> File.deleteAll
+    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli -p" fableBuildPath) clientSrcPath
 )
 
 Target.create "PublishInfrastructure" (fun _ ->
@@ -76,7 +76,7 @@ Target.create "Run" (fun _ ->
         Tools.dotnet "watch run" serverSrcPath
     }
     let client = async {
-        Tools.yarn "webpack-dev-server" clientSrcPath
+        Tools.dotnet (sprintf "fable watch --outDir %s --run webpack-dev-server" fableBuildPath) clientSrcPath
     }
     [server;client]
     |> Async.Parallel

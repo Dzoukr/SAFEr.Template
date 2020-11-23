@@ -1,4 +1,4 @@
-﻿# SAFEr.Template [![NuGet](https://img.shields.io/nuget/v/SAFEr.Template.svg?style=flat)](https://www.nuget.org/packages/SAFEr.Template/)
+﻿# SAFEr.Template [![NuGet](https://img.shields.io/nuget/v/SAFEr.Template.svg?style=flat-square)](https://www.nuget.org/packages/SAFEr.Template/)
 
 Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-stack.github.io/) for full-stack development in F#.
 
@@ -37,7 +37,7 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 - Feliz.Router for secured routing (including fallback to default page when navigating to non-existent page)
 - Feliz.UseElmish for sub-pages
 - Bulma + Font Awesome as npm packages
-- Application split into Domain / State / View
+- Application split into State / View
 - SharedView module for helper functions to navigate to strongly typed pages
 - Public content in `public` folder (including `index.html`)
 - Webpack pre-configured to support SCSS files (from `styles/styles.css`)

@@ -2,7 +2,7 @@
 
 open Feliz
 open Feliz.Bulma
-open Domain
+open State
 open Feliz.UseElmish
 
 let view = React.functionComponent(fun () ->

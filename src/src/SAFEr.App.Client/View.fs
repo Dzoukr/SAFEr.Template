@@ -1,6 +1,6 @@
 ﻿module SAFEr.App.Client.View
 
-open Domain
+open State
 open Feliz
 open Router
 open SharedView

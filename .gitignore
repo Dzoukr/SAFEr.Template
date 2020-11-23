@@ -1,4 +1,5 @@
 .fable/
+.fable-build/
 .fake/
 .farmer/
 .idea/
