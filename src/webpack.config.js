@@ -13,6 +13,12 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
+// If we're running the webpack-dev-server, assume we're in development mode
+var isProduction = !process.argv.find(v => v.indexOf('webpack-dev-server') !== -1);
+var environment = isProduction ? 'production' : 'development';
+process.env.NODE_ENV = environment;
+console.log('Bundling for ' + environment + '...');
+
 var CONFIG = {
     // The tags to include the generated JS and CSS will be automatically injected in the HTML template
     // See https://github.com/jantimon/html-webpack-plugin
@@ -30,31 +36,28 @@ var CONFIG = {
             target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
                changeOrigin: true
            },
-        // redirect websocket requests that start with /socket/ to the server on the port 8085
-        '/socket/**': {
-            target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
-            ws: true
-           }
+        // // redirect websocket requests that start with /socket/ to the server on the port 8085
+        // '/socket/**': {
+        //     target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
+        //     ws: true
+        //    }
        },
     babel: {
+        plugins: [!isProduction && require.resolve('react-refresh/babel')].filter(Boolean),
         presets: [
-            ['@babel/preset-env', {
-                modules: false,
+            ["@babel/preset-react"],
+            ["@babel/preset-env", {
+                "targets": "> 0.25%, not dead",
+                "modules": false,
                 // This adds polyfills when needed. Requires core-js dependency.
                 // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
-                // Note that you still need to add custom polyfills if necessary (e.g. whatwg-fetch)
-                useBuiltIns: 'usage',
-                corejs: 3
+                "useBuiltIns": "usage",
+                "corejs": 3
             }]
         ],
     }
 }
 
-// If we're running the webpack-dev-server, assume we're in development mode
-var isProduction = !process.argv.find(v => v.indexOf('webpack-dev-server') !== -1);
-var environment = isProduction ? 'production' : 'development';
-process.env.NODE_ENV = environment;
-console.log('Bundling for ' + environment + '...');
 
 // The HtmlWebpackPlugin allows us to use a template for the index.html page
 // and automatically injects <script> or <link> tags for generated bundles.
@@ -107,7 +110,13 @@ module.exports = {
         ]),
     resolve: {
         // See https://github.com/fable-compiler/Fable/issues/1490
-        symlinks: false
+        symlinks: false,
+        modules: [resolve("./node_modules")],
+        alias: {
+            // Some old libraries still use an old specific version of core-js
+            // Redirect the imports of these libraries to the newer core-js
+            'core-js/es6': 'core-js/es'
+        }
     },
     // Configuration for webpack-dev-server
     devServer: {

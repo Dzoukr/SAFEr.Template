@@ -6,7 +6,8 @@ open Feliz.UseElmish
 open Router
 open SharedView
 
-let view = React.functionComponent("Application", fun () ->
+[<ReactComponent>]
+let view () =
     let model, dispatch = React.useElmish(State.init, State.update, [| |])
 
     let navigation =
@@ -24,4 +25,3 @@ let view = React.functionComponent("Application", fun () ->
         router.onUrlChanged (Page.parseFromUrlSegments >> UrlChanged >> dispatch)
         router.children [ navigation; render ]
     ]
-)
