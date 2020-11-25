@@ -36,11 +36,11 @@ var CONFIG = {
             target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
                changeOrigin: true
            },
-        // // redirect websocket requests that start with /socket/ to the server on the port 8085
-        // '/socket/**': {
-        //     target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
-        //     ws: true
-        //    }
+        // redirect websocket requests that start with /socket/ to the server on the port 8085
+        '/socket/**': {
+            target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "8085"),
+            ws: true
+           }
        },
     babel: {
         plugins: [!isProduction && require.resolve('react-refresh/babel')].filter(Boolean),
