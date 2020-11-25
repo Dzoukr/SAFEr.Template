@@ -11,6 +11,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
+var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 var CONFIG = {
     // The tags to include the generated JS and CSS will be automatically injected in the HTML template
@@ -102,6 +103,7 @@ module.exports = {
         ])
         : commonPlugins.concat([
             new webpack.HotModuleReplacementPlugin(),
+            new ReactRefreshWebpackPlugin()
         ]),
     resolve: {
         // See https://github.com/fable-compiler/Fable/issues/1490

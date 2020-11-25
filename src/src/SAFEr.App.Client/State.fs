@@ -13,10 +13,7 @@ type Msg =
 
 let init () =
     let nextPage = (Router.currentPath() |> Page.parseFromUrlSegments)
-    {
-        CurrentPage = nextPage
-    },
-        Cmd.ofSub (fun _ -> Router.navigatePage nextPage)
+    { CurrentPage = nextPage }, Cmd.ofSub (fun _ -> Router.navigatePage nextPage)
 
 let update (msg:Msg) (model:Model): Model * Cmd<Msg> =
     match msg with
