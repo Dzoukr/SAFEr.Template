@@ -33,6 +33,7 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Client
 
+- Fable 3 as dotnet tool
 - Feliz + Feliz.Bulma as default
 - Feliz.Router for secured routing (including fallback to default page when navigating to non-existent page)
 - Feliz.UseElmish for sub-pages

@@ -7,7 +7,7 @@ open Router
 open SharedView
 
 [<ReactComponent>]
-let view () =
+let appView () =
     let model, dispatch = React.useElmish(State.init, State.update, [| |])
 
     let navigation =
@@ -18,7 +18,7 @@ let view () =
         ]
     let render =
         match model.CurrentPage with
-        | Page.Index -> Pages.Index.View.view ()
+        | Page.Index -> Pages.Index.View.indexView ()
         | Page.About -> Html.text "SAFEr Template"
     React.router [
         router.pathMode

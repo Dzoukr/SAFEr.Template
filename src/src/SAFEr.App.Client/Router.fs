@@ -17,9 +17,11 @@ module Page =
         | [ ] -> Page.Index
         | _ -> defaultPage
 
+    let noQueryString segments : string list * (string * string) list = segments, []
+
     let toUrlSegments = function
-        | Page.Index -> [ ]
-        | Page.About -> [ "about" ]
+        | Page.Index -> [ ] |> noQueryString
+        | Page.About -> [ "about" ] |> noQueryString
 
 
 [<RequireQualifiedAccess>]
@@ -29,4 +31,20 @@ module Router =
         let href : string = !!e.currentTarget?attributes?href?value
         Router.navigatePath href
 
-    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Array.ofList |> Router.navigatePath
+    let navigatePath (segments, queryString:(string * string) list) =
+        match segments with
+        | [] -> Router.navigatePath("", queryString)
+        | segs ->
+            let last = segs |> List.rev |> List.head
+            let rest = segs |> List.rev |> List.tail |> List.rev
+            Router.nav (rest @ [ last + Router.encodeQueryString queryString ]) HistoryMode.PushState RouteMode.Path
+
+    let formatPath(segments, queryString: (string * string) list) : string =
+        match segments with
+        | [] -> Router.formatPath("", queryString)
+        | segs ->
+            let last = segs |> List.rev |> List.head
+            let rest = segs |> List.rev |> List.tail |> List.rev
+            Router.encodeParts (rest @ [ last + Router.encodeQueryString queryString ]) RouteMode.Path
+
+    let navigatePage (p:Page) = p |> Page.toUrlSegments |> navigatePath
