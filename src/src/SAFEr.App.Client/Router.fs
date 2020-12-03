@@ -37,20 +37,4 @@ module Router =
         | [ single ] -> Some([], single)
         | list -> Some (list |> List.tail |> List.rev, list.Head)
 
-    let navigatePath (segments, queryString:(string * string) list) =
-        segments
-        |> trySeparateLast
-        |> Option.map (fun (r, l) ->
-            Router.nav (r @ [ l + Router.encodeQueryString queryString ]) HistoryMode.PushState RouteMode.Path
-        )
-        |> Option.defaultWith (fun _ -> Router.navigatePath("", queryString))
-
-    let formatPath(segments, queryString: (string * string) list) : string =
-        segments
-        |> trySeparateLast
-        |> Option.map (fun (r, l) ->
-            Router.encodeParts (r @ [ l + Router.encodeQueryString queryString ]) RouteMode.Path
-        )
-        |> Option.defaultWith (fun _ -> Router.formatPath("", queryString))
-
-    let navigatePage (p:Page) = p |> Page.toUrlSegments |> navigatePath
+    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Router.navigatePath

@@ -6,7 +6,7 @@ open State
 open Feliz.UseElmish
 
 [<ReactComponent>]
-let indexView () =
+let IndexView () =
     let model, dispatch = React.useElmish(State.init, State.update, [| |])
 
     Bulma.button.button [
