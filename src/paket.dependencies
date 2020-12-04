@@ -27,12 +27,3 @@ group Build
     nuget Fake.Core.Target
     nuget Fake.DotNet.Cli
     nuget Fake.IO.FileSystem
-
-group Infrastructure
-    source https://api.nuget.org/v3/index.json
-    framework: netcoreapp3.1
-    storage: none
-
-    nuget Fake.Core.CommandLineParsing
-    nuget Fake.IO.FileSystem
-    nuget Farmer

@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.6.1</Version>
-        <PackageReleaseNotes>Remove unused function</PackageReleaseNotes>
+        <Version>1.6.2</Version>
+        <PackageReleaseNotes>Remove unused dependencies</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
