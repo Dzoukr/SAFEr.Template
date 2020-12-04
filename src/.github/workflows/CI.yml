@@ -55,4 +55,4 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure
-        run: dotnet SAFEr.App.Infrastructure.dll -g "MyResourceGroup" -f "app"
+        run: dotnet fsi /langversion:preview Infrastructure.fsx "app" "Safer.App"

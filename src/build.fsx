@@ -45,7 +45,6 @@ let clientSrcPath = srcPath </> "SAFEr.App.Client"
 let serverSrcPath = srcPath </> "SAFEr.App.Server"
 let appPublishPath = publishPath </> "app"
 let fableBuildPath = clientSrcPath </> ".fable-build"
-let infrastructureSrcPath = toolsPath </> "SAFEr.App.Infrastructure"
 let infrastructurePublishPath = publishPath </> "infrastructure"
 
 // Targets
@@ -68,7 +67,8 @@ Target.create "Publish" (fun _ ->
 )
 
 Target.create "PublishInfrastructure" (fun _ ->
-    Tools.dotnet (sprintf "publish -c Release -o \"%s\"" infrastructurePublishPath) infrastructureSrcPath
+    Directory.ensure infrastructurePublishPath
+    "Infrastructure.fsx" |> Shell.copyFile infrastructurePublishPath
 )
 
 Target.create "Run" (fun _ ->

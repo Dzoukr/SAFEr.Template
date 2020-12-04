@@ -1,4 +1,0 @@
-group Infrastructure
-    Fake.Core.CommandLineParsing
-    Fake.IO.FileSystem
-    Farmer
