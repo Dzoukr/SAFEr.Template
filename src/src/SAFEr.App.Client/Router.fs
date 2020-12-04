@@ -23,18 +23,11 @@ module Page =
         | Page.Index -> [ ] |> noQueryString
         | Page.About -> [ "about" ] |> noQueryString
 
-
 [<RequireQualifiedAccess>]
 module Router =
     let goToUrl (e:MouseEvent) =
         e.preventDefault()
         let href : string = !!e.currentTarget?attributes?href?value
         Router.navigatePath href
-
-    let private trySeparateLast xs =
-        match xs |> List.rev with
-        | [] -> None
-        | [ single ] -> Some([], single)
-        | list -> Some (list |> List.tail |> List.rev, list.Head)
 
     let navigatePage (p:Page) = p |> Page.toUrlSegments |> Router.navigatePath
