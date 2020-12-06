@@ -58,7 +58,7 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Deploy
 
-- Farmer specified in separated console application in `tools/[AppName].Infrastructure` as CLI
+- Farmer specified in separated F# script in `Infrastructure.fsx` as CLI
 - Environment definition including AppInsights in `Deployments`
 
 ### GitHub Actions

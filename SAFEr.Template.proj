@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.6.3</Version>
-        <PackageReleaseNotes>Fixing typo</PackageReleaseNotes>
+        <Version>1.7.0</Version>
+        <PackageReleaseNotes>Feliz extensions closer to default API style</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>

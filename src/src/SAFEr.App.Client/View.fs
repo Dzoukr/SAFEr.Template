@@ -12,9 +12,9 @@ let AppView () =
 
     let navigation =
         Html.div [
-            Html.aRouted "Home" Page.Index
+            Html.a("Home", Page.Index)
             Html.span " | "
-            Html.aRouted "About" Page.About
+            Html.a("About", Page.About)
         ]
     let render =
         match model.CurrentPage with
