@@ -15,13 +15,13 @@
       ]
     },
     "femto": {
-      "version": "0.8.7",
+      "version": "0.9.0",
       "commands": [
         "femto"
       ]
     },
     "fable": {
-      "version": "3.0.0",
+      "version": "3.0.1",
       "commands": [
         "fable"
       ]
