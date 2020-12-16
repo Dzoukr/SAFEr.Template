@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.8.0</Version>
-        <PackageReleaseNotes>Full NET5 version</PackageReleaseNotes>
+        <Version>1.8.1</Version>
+        <PackageReleaseNotes>Adding missing viewport</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
