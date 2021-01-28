@@ -40,7 +40,6 @@ module Tools =
 
 let publishPath = Path.getFullName "publish"
 let srcPath = Path.getFullName "src"
-let toolsPath = Path.getFullName "tools"
 let clientSrcPath = srcPath </> "SAFEr.App.Client"
 let serverSrcPath = srcPath </> "SAFEr.App.Server"
 let appPublishPath = publishPath </> "app"
