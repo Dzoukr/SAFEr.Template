@@ -3,8 +3,8 @@
 open Giraffe
 open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
-open SAFEr.App.Shared.Communication
-open FSharp.Control.Tasks.V2
+open SAFEr.App.Shared.API
+open FSharp.Control.Tasks
 
 let service = {
     GetMessage = fun _ -> task { return "Hi from Server!" } |> Async.AwaitTask

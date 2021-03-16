@@ -23,7 +23,7 @@ And start it in development mode:
 
 ## Disclaimer
 
-I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it's a great thing for devs to start work on F# full-stack apps. However for me the minimal template is too minimal and default template is too different from my preferences, so I always struggle with need to delete / restructure many things. This template makes it right for me and my projects from the very beginning. Feel free to use it.
+I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it's a great thing for devs to start work on F# full-stack apps. However for me, the minimal template is too minimal and the default template is too different from my preferences, so I always struggle with the need to delete/restructure many things. This template makes it right for me and my projects from the very beginning. Feel free to use it.
 
 ## Key differences from SAFE Stack template
 
@@ -36,9 +36,9 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 - Fable 3 as dotnet tool
 - Feliz + Feliz.Bulma as default
 - Feliz.Router for secured routing (including fallback to default page when navigating to non-existent page)
-- Feliz.UseElmish for sub-pages
+- Feliz.UseDeferred for calling remoting methods
+- UseState hooks instead of Elmish
 - Bulma + Font Awesome as npm packages
-- Application split into State / View
 - SharedView module for helper functions to navigate to strongly typed pages
 - Public content in `public` folder (including `index.html`)
 - Webpack pre-configured to support SCSS files (from `styles/styles.css`)
@@ -54,7 +54,7 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Shared
 
-- Remoting definition in `Communication` module
+- Remoting definition in `API` module
 
 ### Deploy
 

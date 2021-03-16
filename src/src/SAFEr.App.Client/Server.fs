@@ -1,7 +1,7 @@
 ﻿module SAFEr.App.Client.Server
 
 open Fable.Remoting.Client
-open SAFEr.App.Shared.Communication
+open SAFEr.App.Shared.API
 
 let service =
     Remoting.createApi()

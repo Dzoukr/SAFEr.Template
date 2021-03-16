@@ -1,4 +1,4 @@
-﻿module SAFEr.App.Shared.Communication
+﻿module SAFEr.App.Shared.API
 
 type Service = {
     GetMessage : unit -> Async<string>

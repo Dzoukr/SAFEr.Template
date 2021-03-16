@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.10.0</Version>
-        <PackageReleaseNotes>Extend editorconfig + dependencies update</PackageReleaseNotes>
+        <Version>1.11.0</Version>
+        <PackageReleaseNotes>Making things even simpler with no Elmish anymore</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
         <PackageLicenseUrl>https://github.com/Dzoukr/SAFEr.Template/blob/master/LICENSE</PackageLicenseUrl>
         <PackageIconUrl></PackageIconUrl>
         <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
-        <PackageTags>template;fsharp;giraffe;azure;fable;elmish;farmer</PackageTags>
+        <PackageTags>template;fsharp;giraffe;azure;fable;farmer</PackageTags>
         <PackageType>Template</PackageType>
         <NoBuild>true</NoBuild>
         <IncludeBuildOutput>false</IncludeBuildOutput>

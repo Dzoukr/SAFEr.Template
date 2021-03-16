@@ -14,7 +14,7 @@ nuget Fable.Remoting.Client
 nuget Feliz
 nuget Feliz.Bulma
 nuget Feliz.Router
-nuget Feliz.UseElmish
+nuget Feliz.UseDeferred
 nuget FsToolkit.ErrorHandling.TaskResult
 
 group Build
