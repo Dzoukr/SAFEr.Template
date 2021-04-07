@@ -1,3 +1,5 @@
+open System.Text.RegularExpressions
+
 #r "paket: groupref Main //"
 #load ".fake/build.fsx/intellisense.fsx"
 
@@ -51,6 +53,21 @@ Target.create "Publish" (fun _ ->
 
 Target.create "Pack" (fun _ -> Tools.dotnet "pack SAFEr.Template.proj -c Release -o .nupkg" __SOURCE_DIRECTORY__)
 
-"Clean" ==> "Pack" ==> "Publish"
+Target.create "SetVersion" (fun _ ->
+    let version =
+        "SAFEr.Template.proj"
+        |> File.readAsString
+        |> (fun x -> Regex.Match (x, "<Version>(.*)</Version>"))
+        |> (fun x -> x.Groups.[1].Value)
+    
+    Shell.regexReplaceInFileWithEncoding
+        "  \"name\": .+,"
+       ("  \"name\": \"SAFEr Web App v" + version + "\",")
+        System.Text.Encoding.UTF8
+        "src/.template.config/template.json"
+    ()
+)
+
+"Clean" ==> "SetVersion" ==> "Pack" ==> "Publish"
 
 Target.runOrDefaultWithArguments "Pack"
