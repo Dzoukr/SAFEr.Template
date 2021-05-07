@@ -6,7 +6,7 @@ open Microsoft.Extensions.Configuration
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 
-type Startup(cfg:IConfiguration, evn:IWebHostEnvironment) =
+type Startup(cfg:IConfiguration, env:IWebHostEnvironment) =
     member _.ConfigureServices (services:IServiceCollection) =
         services
             .AddApplicationInsightsTelemetry(cfg.["APPINSIGHTS_INSTRUMENTATIONKEY"])
