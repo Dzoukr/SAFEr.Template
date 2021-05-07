@@ -4,22 +4,32 @@ Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-
 
 ## Installation
 
+Install SAFEr Template:
+
+    dotnet new --install SAFEr.Template
+
 Create new directory for your kick-ass full-stack next-unicorn app:
 
     mkdir NextUnicornApp
     cd NextUnicornApp
-    
-Install SAFEr Template:
-
-    dotnet new --install SAFEr.Template
 
 Bootstrap your application:
 
     dotnet new SAFEr
 
+Restore dotnet tools:
+
+    dotnet tool restore
+
 And start it in development mode:
 
     dotnet fake build
+
+Your application is now running on:
+
+    http://localhost:8080 // fable frontend
+    http://localhost:5000 // backend API
+
 
 ## Disclaimer
 
