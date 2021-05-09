@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.11.1</Version>
-        <PackageReleaseNotes>Fixing page file name</PackageReleaseNotes>
+        <Version>1.11.2</Version>
+        <PackageReleaseNotes>Fix typo evn to env #5</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
