@@ -72,6 +72,7 @@ Target.create "PublishInfrastructure" (fun _ ->
 
 Target.create "Run" (fun _ ->
     let server = async {
+        Environment.setEnvironVar "ASPNETCORE_ENVIRONMENT" "Development"
         Tools.dotnet "watch run" serverSrcPath
     }
     let client = async {
