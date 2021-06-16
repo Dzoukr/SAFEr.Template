@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>SAFEr.Template</PackageId>
-        <Version>1.12.0</Version>
-        <PackageReleaseNotes>Updating dependencies + fixing issue with assets file for subpaths</PackageReleaseNotes>
+        <Version>1.13.0</Version>
+        <PackageReleaseNotes>Set ASPNETCORE_ENVIRONMENT to "Development" in Run #6</PackageReleaseNotes>
         <Authors>Roman Provazník</Authors>
         <Description>Template for SAFEr Web App</Description>
         <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
