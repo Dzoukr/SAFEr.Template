@@ -62,7 +62,7 @@ Target.create "Publish" (fun _ ->
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     Tools.dotnet publishArgs serverSrcPath
     [ appPublishPath </> "appsettings.Development.json" ] |> File.deleteAll
-    Tools.dotnet (sprintf "fable --outDir %s --run webpack-cli -p" fableBuildPath) clientSrcPath
+    Tools.yarn "build" ""
 )
 
 Target.create "PublishInfrastructure" (fun _ ->
@@ -76,7 +76,7 @@ Target.create "Run" (fun _ ->
         Tools.dotnet "watch run" serverSrcPath
     }
     let client = async {
-        Tools.dotnet (sprintf "fable watch --outDir %s --run webpack-dev-server" fableBuildPath) clientSrcPath
+        Tools.yarn "start" ""
     }
     [server;client]
     |> Async.Parallel

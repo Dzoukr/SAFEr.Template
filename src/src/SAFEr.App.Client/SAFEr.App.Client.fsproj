@@ -10,6 +10,7 @@
         <Compile Include="Pages\Index.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
+        <Content Include="index.html" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\SAFEr.App.Shared\SAFEr.App.Shared.fsproj" />
