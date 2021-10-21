@@ -89,6 +89,7 @@ module.exports = {
     // to prevent browser caching if code changes
     output: {
         path: resolve(CONFIG.outputDir),
+        publicPath: '/',
         filename: isProduction ? '[name].[fullhash].js' : '[name].js'
     },
     mode: mode,

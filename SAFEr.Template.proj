@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>1.15.0</Version>
-    <PackageReleaseNotes>Updating build.fsx to Build project</PackageReleaseNotes>
+    <Version>1.15.1</Version>
+    <PackageReleaseNotes>Fixing root path in webpack.config.js</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
