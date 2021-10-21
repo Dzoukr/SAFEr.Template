@@ -23,7 +23,7 @@ Restore dotnet tools:
 
 And start it in development mode:
 
-    dotnet fake build
+    dotnet run
 
 Your application is now running on:
 
