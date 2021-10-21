@@ -1,24 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <PackageId>SAFEr.Template</PackageId>
-        <Version>1.14.0</Version>
-        <PackageReleaseNotes>Update to Webpack 5 + smarter build pipeline</PackageReleaseNotes>
-        <Authors>Roman Provazník</Authors>
-        <Description>Template for SAFEr Web App</Description>
-        <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/Dzoukr/SAFEr.Template/blob/master/LICENSE</PackageLicenseUrl>
-        <PackageIconUrl></PackageIconUrl>
-        <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
-        <PackageTags>template;fsharp;giraffe;azure;fable;farmer</PackageTags>
-        <PackageType>Template</PackageType>
-        <NoBuild>true</NoBuild>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <!-- https://github.com/dotnet/templating/issues/2350#issuecomment-610431461 -->
-        <NoDefaultExcludes>true</NoDefaultExcludes>
-    </PropertyGroup>
-    <PropertyGroup>
-        <ExcludeFromPackage>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>SAFEr.Template</PackageId>
+    <Version>1.15.0</Version>
+    <PackageReleaseNotes>Updating build.fsx to Build project</PackageReleaseNotes>
+    <Authors>Roman Provazník</Authors>
+    <Description>Template for SAFEr Web App</Description>
+    <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Dzoukr/SAFEr.Template/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>
+    </PackageIconUrl>
+    <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
+    <PackageTags>template;fsharp;giraffe;azure;fable;farmer</PackageTags>
+    <PackageType>Template</PackageType>
+    <NoBuild>true</NoBuild>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <!-- https://github.com/dotnet/templating/issues/2350#issuecomment-610431461 -->
+    <NoDefaultExcludes>true</NoDefaultExcludes>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ExcludeFromPackage>
             **/.fake/**/*;
             **/.fable/**/*;
             **/.fable-build/**/*;
@@ -34,10 +37,11 @@
             **/paket-files/**/*;
             **/publish/**
         </ExcludeFromPackage>
-    </PropertyGroup>
-    <ItemGroup>
-        <Content Include="src/**/*.*" Exclude="$(ExcludeFromPackage)" >
-            <PackagePath>content</PackagePath>
-        </Content>
-    </ItemGroup>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="src/**/*.*" Exclude="$(ExcludeFromPackage)">
+      <PackagePath>content</PackagePath>
+    </Content>
+  </ItemGroup>
+  <Import Project=".paket\Paket.Restore.targets" />
 </Project>
