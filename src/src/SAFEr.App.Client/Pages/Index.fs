@@ -2,22 +2,31 @@
 
 open Feliz
 open Feliz.Bulma
-open Feliz.UseDeferred
+open Elmish
+open Feliz.UseElmish
 open SAFEr.App.Client
+
+type State = {
+    Message : string
+}
+
+type Msg =
+    | AskForMessage
+    | MessageReceived of string
+
+let init () = { Message = "Click me!" }, Cmd.none
+
+let update (msg:Msg) (model:State) : State * Cmd<Msg> =
+    match msg with
+    | AskForMessage -> model, Cmd.OfAsync.perform Server.service.GetMessage () MessageReceived
+    | MessageReceived msg -> { model with Message = msg }, Cmd.none
 
 [<ReactComponent>]
 let IndexView () =
-    let callReq,setCallReq = React.useState(Deferred.HasNotStartedYet)
-    let call = React.useDeferredCallback((fun _ -> Server.service.GetMessage()), setCallReq)
-    let title =
-        match callReq with
-        | Deferred.HasNotStartedYet -> "Click me!"
-        | Deferred.InProgress -> "...loading"
-        | Deferred.Resolved m -> m
-        | Deferred.Failed err -> err.Message
+    let state, dispatch = React.useElmish(init, update, [| |])
 
     Bulma.button.button [
         color.isPrimary
-        prop.text title
-        prop.onClick call
+        prop.text state.Message
+        prop.onClick (fun _ -> AskForMessage |> dispatch)
     ]

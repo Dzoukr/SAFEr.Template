@@ -46,11 +46,11 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 - Fable 3 as dotnet tool
 - Feliz + Feliz.Bulma as default
 - Feliz.Router for secured routing (including fallback to default page when navigating to non-existent page)
-- Feliz.UseDeferred for calling remoting methods
-- UseState hooks instead of Elmish
+- Feliz.UseElmish on page level
+- Elmish for wrapper level
 - Bulma + Font Awesome as npm packages
 - SharedView module for helper functions to navigate to strongly typed pages
-- Public content in `public` folder (including `index.html`)
+- Public content in `public` folder
 - Webpack pre-configured to support SCSS files (from `styles/styles.css`)
 - Webpack pre-configured to correct SPA routing
 - Femto pre-installed

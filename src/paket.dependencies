@@ -14,7 +14,11 @@ nuget Fable.Remoting.Client
 nuget Feliz
 nuget Feliz.Bulma
 nuget Feliz.Router
-nuget Feliz.UseDeferred
+nuget Feliz.UseElmish
+nuget Fable.Elmish
+nuget Fable.Elmish.React
+nuget Fable.Elmish.Debugger
+nuget Fable.Elmish.HMR
 nuget FsToolkit.ErrorHandling.TaskResult
 
 group Build

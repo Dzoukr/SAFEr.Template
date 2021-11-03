@@ -31,3 +31,7 @@ module Router =
         Router.navigatePath href
 
     let navigatePage (p:Page) = p |> Page.toUrlSegments |> Router.navigatePath
+
+[<RequireQualifiedAccess>]
+module Cmd =
+    let navigatePage (p:Page) = p |> Page.toUrlSegments |> Cmd.navigatePath

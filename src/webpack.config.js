@@ -9,7 +9,7 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+//var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 var Dotenv = require('dotenv-webpack');
 var realFs = require('fs');
 var gracefulFs = require('graceful-fs');
@@ -42,23 +42,24 @@ var CONFIG = {
             target: 'http://localhost:' + (process.env.SERVER_PROXY_PORT || "5000"),
             ws: true
         }
-    },
-    // Use babel-preset-env to generate JS compatible with most-used browsers.
-    // More info at https://babeljs.io/docs/en/next/babel-preset-env.html
-    babel: {
-        plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
-        presets: [
-            ["@babel/preset-react"],
-            ["@babel/preset-env", {
-                "targets": "> 0.25%, not dead",
-                "modules": false,
-                // This adds polyfills when needed. Requires core-js dependency.
-                // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
-                "useBuiltIns": "usage",
-                "corejs": 3
-            }]
-        ],
     }
+    // },
+    // // Use babel-preset-env to generate JS compatible with most-used browsers.
+    // // More info at https://babeljs.io/docs/en/next/babel-preset-env.html
+    // babel: {
+    //     plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
+    //     presets: [
+    //         ["@babel/preset-react"],
+    //         ["@babel/preset-env", {
+    //             "targets": "> 0.25%, not dead",
+    //             "modules": false,
+    //             // This adds polyfills when needed. Requires core-js dependency.
+    //             // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
+    //             "useBuiltIns": "usage",
+    //             "corejs": 3
+    //         }]
+    //     ],
+    // }
 }
 
 
@@ -127,8 +128,8 @@ module.exports = {
             }),
         ])
         : commonPlugins.concat([
-            // new webpack.HotModuleReplacementPlugin(),
-            new ReactRefreshWebpackPlugin()
+            new webpack.HotModuleReplacementPlugin(),
+            //new ReactRefreshWebpackPlugin()
         ]),
     // resolve: {
     //     // // See https://github.com/fable-compiler/Fable/issues/1490
@@ -159,11 +160,8 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: CONFIG.babel
-                },
+                enforce: "pre",
+                use: ['source-map-loader'],
             },
             {
                 // For pure CSS - /\.css$/i,

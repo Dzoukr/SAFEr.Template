@@ -1,6 +1,23 @@
 module SAFEr.App.Client.App
 
-open Feliz
-open Browser.Dom
+open Elmish
+open Elmish.React
 
-ReactDOM.render(View.AppView, document.getElementById("safer-app"))
+//-:cnd:noEmit
+#if DEBUG
+open Elmish.Debug
+open Elmish.HMR
+#endif
+
+//+:cnd:noEmit
+Program.mkProgram View.init View.update View.AppView
+//-:cnd:noEmit
+#if DEBUG
+|> Program.withConsoleTrace
+#endif
+|> Program.withReactSynchronous "safer-app"
+#if DEBUG
+|> Program.withDebugger
+#endif
+//+:cnd:noEmit
+|> Program.run
