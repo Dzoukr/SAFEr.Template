@@ -3,19 +3,19 @@
   "isRoot": true,
   "tools": {
     "paket": {
-      "version": "6.1.3",
+      "version": "6.2.1",
       "commands": [
         "paket"
       ]
     },
     "femto": {
-      "version": "0.11.0",
+      "version": "0.12.0",
       "commands": [
         "femto"
       ]
     },
     "fable": {
-      "version": "3.4.7",
+      "version": "3.4.10",
       "commands": [
         "fable"
       ]
