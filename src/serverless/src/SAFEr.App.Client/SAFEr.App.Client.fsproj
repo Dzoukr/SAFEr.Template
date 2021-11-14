@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Compile Include="Server.fs" />
+        <Compile Include="Router.fs" />
+        <Compile Include="SharedView.fs" />
+        <Compile Include="Pages\Index.fs" />
+        <Compile Include="View.fs" />
+        <Compile Include="App.fs" />
+        <Content Include="index.html" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\SAFEr.App.Shared\SAFEr.App.Shared.fsproj" />
+    </ItemGroup>
+    <Import Project="..\..\.paket\Paket.Restore.targets" />
+</Project>

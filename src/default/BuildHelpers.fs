@@ -82,11 +82,11 @@ let runParallel processes =
     |> Proc.Parallel.run
     |> ignore
 
-let runOrDefault args =
+let runOrDefault defTarget args =
     try
         match args with
         | [| target |] -> Target.runOrDefault target
-        | _ -> Target.runOrDefault "Run"
+        | _ -> Target.runOrDefault defTarget
         0
     with e ->
         printfn "%A" e

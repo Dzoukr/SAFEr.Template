@@ -8,12 +8,31 @@
     "Elmish",
     "Farmer"
   ],
-  "name": "SAFEr Web App v1.17.0",
+  "name": "SAFEr Web App v1.18.0",
   "tags": {
     "language": "F#",
     "type": "project"
   },
   "identity": "SAFEr.Template",
   "shortName": "SAFEr",
-  "sourceName": "SAFEr.App"
+  "sourceName": "SAFEr.App",
+  "symbols": {
+    "serverless": {
+      "type": "parameter",
+      "dataType": "bool",
+      "defaultValue": "false"
+    }
+  },
+  "sources": [
+    {
+      "condition": "(!serverless)",
+      "source": "./default",
+      "exclude": "./serverless"
+    },
+    {
+      "condition": "(serverless)",
+      "source": "./serverless",
+      "exclude": "./default"
+    }
+  ]
 }

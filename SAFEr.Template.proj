@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>1.17.0</Version>
-    <PackageReleaseNotes>Moving to .NET6</PackageReleaseNotes>
+    <Version>1.18.0</Version>
+    <PackageReleaseNotes>Adding support for Azure Functions</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>

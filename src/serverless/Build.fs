@@ -43,8 +43,7 @@ Target.create "PublishInfrastructure" (fun _ ->
 
 Target.create "Run" (fun _ ->
     let server = async {
-        Environment.setEnvironVar "ASPNETCORE_ENVIRONMENT" "Development"
-        Tools.dotnet "watch run" serverSrcPath
+        Tools.dotnet "watch msbuild /t:RunFunctions" serverSrcPath
     }
     let client = async {
         Tools.yarn "start" ""
@@ -65,4 +64,4 @@ let dependencies = [
 ]
 
 [<EntryPoint>]
-let main args = runOrDefault args
+let main args = runOrDefault "Run" args

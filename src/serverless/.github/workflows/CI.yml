@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+
+      - name: Setup .NET 6 SDK
+        uses: actions/setup-dotnet@v1.7.2
+        with:
+          dotnet-version: 6.0.100
+
+      - name: Install Tools
+        run: dotnet tool restore
+
+      - name: Build
+        run: dotnet fake build -t Publish
+
+      - name: Publish App
+        uses: actions/upload-artifact@v2
+        with:
+          name: app
+          path: publish/app
+
+      - name: Publish Infrastructure
+        uses: actions/upload-artifact@v2
+        with:
+          name: infrastructure
+          path: publish/infrastructure
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download app artifact
+        uses: actions/download-artifact@v2.0.5
+        with:
+          name: app
+          path: app
+
+      - name: Download deploy artifact
+        uses: actions/download-artifact@v2.0.5
+        with:
+          name: infrastructure
+
+      - name: AZ Login
+        uses: Azure/login@v1.1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure
+        run: dotnet fsi Infrastructure.fsx "app" "Safer.App"
