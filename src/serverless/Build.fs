@@ -32,7 +32,7 @@ Target.create "Publish" (fun _ ->
     [ appPublishPath ] |> Shell.cleanDirs
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     Tools.dotnet publishArgs serverSrcPath
-    [ appPublishPath </> "appsettings.Development.json" ] |> File.deleteAll
+    [ appPublishPath </> "local.settings.json" ] |> File.deleteAll
     Tools.yarn "build" ""
 )
 

@@ -1,6 +1,6 @@
 ﻿# SAFEr.Template [![NuGet](https://img.shields.io/nuget/v/SAFEr.Template.svg?style=flat-square)](https://www.nuget.org/packages/SAFEr.Template/)
 
-Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-stack.github.io/) for full-stack development in F#.
+Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-stack.github.io/) for full-stack development in F#. 🔥 Now with Azure Functions (isolated) backend support!
 
 ## Installation
 
@@ -13,9 +13,14 @@ Create new directory for your kick-ass full-stack next-unicorn app:
     mkdir NextUnicornApp
     cd NextUnicornApp
 
-Bootstrap your application:
+Bootstrap your application using Giraffe 🦒:
 
     dotnet new SAFEr
+
+Or have fully serverless backend using Azure Functions ⚡:
+
+    dotnet new SAFEr --serverless
+
 
 Restore dotnet tools:
 
@@ -28,7 +33,8 @@ And start it in development mode:
 Your application is now running on:
 
     http://localhost:8080 // fable frontend
-    http://localhost:5000 // backend API
+    http://localhost:5000 // backend API for Giraffe
+    http://localhost:7071 // backend API for Azure Functions
 
 
 ## Disclaimer
@@ -58,6 +64,7 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Server
 
+- 🔥 Now with support for Azure Functions instead of Giraffe!
 - Giraffe instead of Saturn as default
 - Startup class used for ASP.NET setup
 - Application split into more files with separate `WebApp` module
