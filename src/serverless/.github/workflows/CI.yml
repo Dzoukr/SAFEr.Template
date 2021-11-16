@@ -21,38 +21,16 @@ jobs:
         run: dotnet tool restore
 
       - name: Build
-        run: dotnet fake build -t Publish
+        run: dotnet run Publish
 
-      - name: Publish App
+      - name: Publish Backend App
         uses: actions/upload-artifact@v2
         with:
           name: app
           path: publish/app
 
-      - name: Publish Infrastructure
+      - name: Publish Frontend App
         uses: actions/upload-artifact@v2
         with:
-          name: infrastructure
-          path: publish/infrastructure
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download app artifact
-        uses: actions/download-artifact@v2.0.5
-        with:
-          name: app
-          path: app
-
-      - name: Download deploy artifact
-        uses: actions/download-artifact@v2.0.5
-        with:
-          name: infrastructure
-
-      - name: AZ Login
-        uses: Azure/login@v1.1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: Deploy to Azure
-        run: dotnet fsi Infrastructure.fsx "app" "Safer.App"
+          name: app-fe
+          path: publish/app-fe

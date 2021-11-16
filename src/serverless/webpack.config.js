@@ -28,7 +28,7 @@ var CONFIG = {
     indexHtmlTemplate: './src/SAFEr.App.Client/index.html',
     fsharpEntry: './.fable-build/App.js',
     cssEntry: './src/SAFEr.App.Client/styles/styles.scss',
-    outputDir: './publish/app/public',
+    outputDir: './publish/app-fe',
     assetsDir: './src/SAFEr.App.Client/public',
     devServerPort: 8080,
     // When using webpack-dev-server, you may need to redirect some calls

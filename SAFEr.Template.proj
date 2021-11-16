@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>1.18.1</Version>
-    <PackageReleaseNotes>Fixing fsproj for Azure Functions</PackageReleaseNotes>
+    <Version>1.19.0</Version>
+    <PackageReleaseNotes>Removing Infrastructure from template + different folder for serverless deploy FE/BE</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
@@ -11,7 +11,7 @@
     <PackageIconUrl>
     </PackageIconUrl>
     <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
-    <PackageTags>template;fsharp;giraffe;azure;fable;serverless;azure functions;farmer</PackageTags>
+    <PackageTags>template;fsharp;giraffe;azure;fable;serverless;azure functions</PackageTags>
     <PackageType>Template</PackageType>
     <NoBuild>true</NoBuild>
     <IncludeBuildOutput>false</IncludeBuildOutput>

@@ -39,7 +39,7 @@ Your application is now running on:
 
 ## Disclaimer
 
-I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it's a great thing for devs to start work on F# full-stack apps. However for me, the minimal template is too minimal and the default template is too different from my preferences, so I always struggle with the need to delete/restructure many things. This template makes it right for me and my projects from the very beginning. Feel free to use it.
+I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it's a great thing for devs to start work on F# full-stack apps. However for me, the minimal template is too minimal and the default template is too different from my preferences, so I always struggle with the need to delete/restructure many things. This template makes it right for me and my projects from the very beginning. Feel free to use it. And one more thing... This template can change every time I decide to take a different approach to F# full-stack, so stay sharp. :)
 
 ## Key differences from SAFE Stack template
 
@@ -73,11 +73,6 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 - Remoting definition in `API` module
 
-### Deploy
-
-- Farmer specified in separated F# script in `Infrastructure.fsx` as CLI
-- Environment definition including AppInsights in `Deployments`
-
 ### GitHub Actions
 
-- Continuous Integration / Deployment pipeline prepared in `.github/workflows/CI.yml`
+- Continuous Integration pipeline prepared in `.github/workflows/CI.yml`

@@ -14,8 +14,6 @@ let srcPath = Path.getFullName "src"
 let clientSrcPath = srcPath </> "SAFEr.App.Client"
 let serverSrcPath = srcPath </> "SAFEr.App.Server"
 let appPublishPath = publishPath </> "app"
-let fableBuildPath = clientSrcPath </> ".fable-build"
-let infrastructurePublishPath = publishPath </> "infrastructure"
 
 // Targets
 let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
@@ -29,16 +27,11 @@ Target.create "InstallClient" (fun _ ->
 )
 
 Target.create "Publish" (fun _ ->
-    [ appPublishPath ] |> Shell.cleanDirs
+    [ publishPath ] |> Shell.cleanDirs
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     Tools.dotnet publishArgs serverSrcPath
     [ appPublishPath </> "local.settings.json" ] |> File.deleteAll
     Tools.yarn "build" ""
-)
-
-Target.create "PublishInfrastructure" (fun _ ->
-    Directory.ensure infrastructurePublishPath
-    "Infrastructure.fsx" |> Shell.copyFile infrastructurePublishPath
 )
 
 Target.create "Run" (fun _ ->
@@ -56,9 +49,7 @@ Target.create "Run" (fun _ ->
 
 let dependencies = [
     "InstallClient"
-        ==> "PublishInfrastructure"
         ==> "Publish"
-
     "InstallClient"
         ==> "Run"
 ]
