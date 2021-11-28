@@ -1,7 +1,7 @@
 ﻿module SAFEr.App.Client.Pages.Index
 
 open Feliz
-open Feliz.Bulma
+open Feliz.DaisyUI
 open Elmish
 open Feliz.UseElmish
 open SAFEr.App.Client
@@ -25,8 +25,8 @@ let update (msg:Msg) (model:State) : State * Cmd<Msg> =
 let IndexView () =
     let state, dispatch = React.useElmish(init, update, [| |])
 
-    Bulma.button.button [
-        color.isPrimary
+    Daisy.button.button [
+        button.primary
         prop.text state.Message
         prop.onClick (fun _ -> AskForMessage |> dispatch)
     ]

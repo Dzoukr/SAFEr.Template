@@ -13,7 +13,7 @@ nuget Fable.Core
 nuget Fable.React
 nuget Fable.Remoting.Client
 nuget Feliz
-nuget Feliz.Bulma
+nuget Feliz.DaisyUI
 nuget Feliz.Router
 nuget Feliz.UseElmish
 nuget Fable.Elmish

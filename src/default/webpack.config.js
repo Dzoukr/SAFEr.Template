@@ -9,7 +9,6 @@ var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//var ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 var Dotenv = require('dotenv-webpack');
 var realFs = require('fs');
 var gracefulFs = require('graceful-fs');
@@ -27,7 +26,7 @@ var CONFIG = {
     // See https://github.com/jantimon/html-webpack-plugin
     indexHtmlTemplate: './src/SAFEr.App.Client/index.html',
     fsharpEntry: './.fable-build/App.js',
-    cssEntry: './src/SAFEr.App.Client/styles/styles.scss',
+    cssEntry: './src/SAFEr.App.Client/styles/styles.css',
     outputDir: './publish/app/public',
     assetsDir: './src/SAFEr.App.Client/public',
     devServerPort: 8080,
@@ -43,23 +42,6 @@ var CONFIG = {
             ws: true
         }
     }
-    // },
-    // // Use babel-preset-env to generate JS compatible with most-used browsers.
-    // // More info at https://babeljs.io/docs/en/next/babel-preset-env.html
-    // babel: {
-    //     plugins: [isDevelopment && require.resolve('react-refresh/babel')].filter(Boolean),
-    //     presets: [
-    //         ["@babel/preset-react"],
-    //         ["@babel/preset-env", {
-    //             "targets": "> 0.25%, not dead",
-    //             "modules": false,
-    //             // This adds polyfills when needed. Requires core-js dependency.
-    //             // See https://babeljs.io/docs/en/babel-preset-env#usebuiltins
-    //             "useBuiltIns": "usage",
-    //             "corejs": 3
-    //         }]
-    //     ],
-    // }
 }
 
 
@@ -129,18 +111,7 @@ module.exports = {
         ])
         : commonPlugins.concat([
             new webpack.HotModuleReplacementPlugin(),
-            //new ReactRefreshWebpackPlugin()
         ]),
-    // resolve: {
-    //     // // See https://github.com/fable-compiler/Fable/issues/1490
-    //     // symlinks: false,
-    //     modules: [resolve("./node_modules")],
-    //     alias: {
-    //         // Some old libraries still use an old specific version of core-js
-    //         // Redirect the imports of these libraries to the newer core-js
-    //         'core-js/es6': 'core-js/es'
-    //     }
-    // },
     // Configuration for webpack-dev-server
     devServer: {
         static: {
@@ -153,9 +124,6 @@ module.exports = {
         hot: true,
         historyApiFallback: true
     },
-    // - babel-loader: transforms JS to old syntax (compatible with old browsers)
-    // - sass-loaders: transforms SASS/SCSS into JS
-    // - file-loader: Moves files referenced in the code (fonts, images) into output folder
     module: {
         rules: [
             {
@@ -164,28 +132,16 @@ module.exports = {
                 use: ['source-map-loader'],
             },
             {
-                // For pure CSS - /\.css$/i,
-                // For Sass/SCSS - /\.((c|sa|sc)ss)$/i,
-                // For Less - /\.((c|le)ss)$/i,
-                test: /\.((c|sa|sc)ss)$/i,
+                test: /\.(sass|scss|css)$/,
                 use: [
                     isProduction
                         ? MiniCssExtractPlugin.loader
                         : 'style-loader',
-                    {
-                        loader: "css-loader",
-                        options: {
-                            // Run `postcss-loader` on each CSS `@import` and CSS modules/ICSS imports, do not forget that `sass-loader` compile non CSS `@import`'s into a single file
-                            // If you need run `sass-loader` and `postcss-loader` on each CSS `@import` please set it to `2`
-                            importLoaders: 1,
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                    },
+                    'css-loader',
+                    'resolve-url-loader',
+                    'postcss-loader'
                 ],
-            },
-
+            }
         ]
     }
 };

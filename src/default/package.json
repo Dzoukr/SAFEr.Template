@@ -14,27 +14,33 @@
         }
     },
     "devDependencies": {
+        "@tailwindcss/jit": "^0.1.18",
+        "autoprefixer":"^10.4.0",
         "copy-webpack-plugin": "^9.0.1",
         "core-js": "^3.16.1",
         "cross-os": "^1.4.0",
         "css-loader": "^6.2.0",
+        "cssnano": "^5.0.10",
         "dotenv-webpack": "^7.0.3",
         "graceful-fs": "^4.2.8",
         "html-webpack-plugin": "^5.3.2",
         "mini-css-extract-plugin": "^2.2.0",
+        "postcss":"^8.3.11",
+        "postcss-loader":"^6.2.0",
+        "postcss-import": "^14.0.2",
         "react-dom": "^17.0.2",
         "remotedev": "^0.2.9",
-        "sass": "^1.37.5",
-        "sass-loader": "^12.1.0",
-        "source-map-loader": "^3.0.0",
+        "resolve-url-loader":"^4.0.0",
         "style-loader": "^3.2.1",
+        "source-map-loader": "^3.0.0",
         "webpack": "^5.49.0",
         "webpack-cli": "^4.7.2",
         "webpack-dev-server": "^4.3.1"
     },
     "dependencies": {
         "react": "^17.0.2",
-        "@fortawesome/fontawesome-free": "^5.15.4",
-        "bulma": "^0.9.3"
+        "tailwindcss":"^2.2.19",
+        "daisyui": "^1.16.2"
     }
+
 }
