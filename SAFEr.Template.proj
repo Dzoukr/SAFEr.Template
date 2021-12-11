@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>2.0.0</Version>
-    <PackageReleaseNotes>Moving from Bulma to TailwindCSS with DaisyUI</PackageReleaseNotes>
+    <Version>2.1.0</Version>
+    <PackageReleaseNotes>Upgrade to TailwindCSS 3.0</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
@@ -11,7 +11,7 @@
     <PackageIconUrl>
     </PackageIconUrl>
     <RepositoryUrl>https://github.com/Dzoukr/SAFEr.Template.git</RepositoryUrl>
-    <PackageTags>template;fsharp;giraffe;azure;fable;serverless;azure functions</PackageTags>
+    <PackageTags>template;fsharp;giraffe;azure;fable;serverless;azure functions;tailwind</PackageTags>
     <PackageType>Template</PackageType>
     <NoBuild>true</NoBuild>
     <IncludeBuildOutput>false</IncludeBuildOutput>

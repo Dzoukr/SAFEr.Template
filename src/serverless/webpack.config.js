@@ -113,7 +113,6 @@ module.exports = {
         host: '0.0.0.0',
         port: CONFIG.devServerPort,
         proxy: CONFIG.devServerProxy,
-        hot: true,
         historyApiFallback: true
     },
     module: {
