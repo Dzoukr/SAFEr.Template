@@ -14,7 +14,6 @@ let main _ =
                     .ConfigureLogging(fun x ->
                         x.AddFilter<Microsoft.Extensions.Logging.ApplicationInsights.ApplicationInsightsLoggerProvider> ("", LogLevel.Information) |> ignore
                     )
-                    .UseUrls([|"http://0.0.0.0:5000"|])
                     .UseWebRoot("public")
                     |> ignore)
         .Build()

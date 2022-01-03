@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>2.1.0</Version>
-    <PackageReleaseNotes>Upgrade to TailwindCSS 3.0</PackageReleaseNotes>
+    <Version>2.1.1</Version>
+    <PackageReleaseNotes>Removing unnecessary base URL</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
