@@ -9,7 +9,7 @@
     "Serverless",
     "Azure Functions"
   ],
-  "name": "SAFEr Web App v2.1.1",
+  "name": "SAFEr Web App v2.2.0",
   "tags": {
     "language": "F#",
     "type": "project"

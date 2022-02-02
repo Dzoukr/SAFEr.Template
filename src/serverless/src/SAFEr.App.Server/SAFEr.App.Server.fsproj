@@ -16,6 +16,7 @@
         </None>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Remoting.fs" />
         <Compile Include="Functions.fs" />
         <Compile Include="Program.fs" />
     </ItemGroup>

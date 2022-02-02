@@ -1,4 +1,5 @@
 Microsoft.ApplicationInsights.AspNetCore
 Giraffe
+Giraffe.GoodRead
 Fable.Remoting.Giraffe
 FsToolkit.ErrorHandling.TaskResult

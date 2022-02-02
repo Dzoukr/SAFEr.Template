@@ -5,6 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Remoting.fs" />
     <Compile Include="WebApp.fs" />
     <Compile Include="Startup.fs" />
     <Compile Include="Program.fs" />

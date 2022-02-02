@@ -6,6 +6,7 @@ storage: none
 
 nuget Fable.Remoting.Giraffe
 nuget Giraffe
+nuget Giraffe.GoodRead
 nuget Microsoft.ApplicationInsights.AspNetCore
 
 nuget Fable.Core
