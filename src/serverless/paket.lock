@@ -99,7 +99,7 @@ NUGET
     Feliz.CompilerPlugins (1.6)
       Fable.AST (>= 3.0)
       FSharp.Core (>= 4.7.2)
-    Feliz.DaisyUI (1.2.1)
+    Feliz.DaisyUI (2.0)
       Feliz (>= 1.32)
       FSharp.Core (>= 4.7.2)
     Feliz.Router (3.8)
