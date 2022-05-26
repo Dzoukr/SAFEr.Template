@@ -1,10 +1,6 @@
 Fable.Core
 Fable.React
 Fable.Remoting.Client
-Fable.Elmish
-Fable.Elmish.React
-Fable.Elmish.Debugger
-Fable.Elmish.HMR
 Feliz
 Feliz.Router
 Feliz.DaisyUI

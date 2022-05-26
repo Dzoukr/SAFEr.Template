@@ -6,17 +6,17 @@ open Elmish
 open Feliz.UseElmish
 open SAFEr.App.Client.Server
 
-type State = {
+type private State = {
     Message : string
 }
 
-type Msg =
+type private Msg =
     | AskForMessage of bool
     | MessageReceived of ServerResult<string>
 
-let init () = { Message = "Click on one of the buttons!" }, Cmd.none
+let private init () = { Message = "Click on one of the buttons!" }, Cmd.none
 
-let update (msg:Msg) (model:State) : State * Cmd<Msg> =
+let private update (msg:Msg) (model:State) : State * Cmd<Msg> =
     match msg with
     | AskForMessage success -> model, Cmd.OfAsync.eitherAsResult (fun _ -> service.GetMessage success) MessageReceived
     | MessageReceived (Ok msg) -> { model with Message = $"Got success response: {msg}" }, Cmd.none
@@ -41,4 +41,3 @@ let IndexView () =
             ]
         ]
     ]
-

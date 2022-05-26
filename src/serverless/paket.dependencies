@@ -16,10 +16,6 @@ nuget Feliz
 nuget Feliz.DaisyUI
 nuget Feliz.Router
 nuget Feliz.UseElmish
-nuget Fable.Elmish
-nuget Fable.Elmish.React
-nuget Fable.Elmish.Debugger
-nuget Fable.Elmish.HMR
 nuget FsToolkit.ErrorHandling.TaskResult
 
 group Build

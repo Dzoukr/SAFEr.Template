@@ -28,6 +28,8 @@
         "postcss-loader":"^6.2.0",
         "postcss-import": "^14.0.2",
         "react-dom": "^17.0.2",
+        "react-refresh": "^0.13.0",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
         "remotedev": "^0.2.9",
         "resolve-url-loader":"^4.0.0",
         "style-loader": "^3.2.1",

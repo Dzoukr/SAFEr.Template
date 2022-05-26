@@ -4,14 +4,15 @@
 
 // Dependencies. Also required: core-js, @babel/core,
 // @babel/preset-env, babel-loader, sass, sass-loader, css-loader, style-loader, file-loader
-var path = require("path");
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var Dotenv = require('dotenv-webpack');
-var realFs = require('fs');
-var gracefulFs = require('graceful-fs');
+const path = require("path");
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Dotenv = require('dotenv-webpack');
+const realFs = require('fs');
+const gracefulFs = require('graceful-fs');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 gracefulFs.gracefulify(realFs);
 
@@ -21,7 +22,7 @@ mode = mode ? mode : "production"
 const isProduction = mode === 'production'
 const isDevelopment = !isProduction
 
-var CONFIG = {
+const CONFIG = {
     // The tags to include the generated JS and CSS will be automatically injected in the HTML template
     // See https://github.com/jantimon/html-webpack-plugin
     indexHtmlTemplate: './src/SAFEr.App.Client/index.html',
@@ -49,7 +50,7 @@ console.log("Bundling for " + (isProduction ? "production" : "development") + ".
 
 // The HtmlWebpackPlugin allows us to use a template for the index.html page
 // and automatically injects <script> or <link> tags for generated bundles.
-var commonPlugins = [
+const commonPlugins = [
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: resolve(CONFIG.indexHtmlTemplate)
@@ -58,7 +59,7 @@ var commonPlugins = [
     new Dotenv({
         path: "./.env",
         silent: false,
-        systemvars: true
+        systemconsts: true
     })
 ];
 
@@ -110,7 +111,7 @@ module.exports = {
             }),
         ])
         : commonPlugins.concat([
-            new webpack.HotModuleReplacementPlugin(),
+            new ReactRefreshWebpackPlugin()
         ]),
     // Configuration for webpack-dev-server
     devServer: {

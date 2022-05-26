@@ -4,13 +4,13 @@
         <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
     <ItemGroup>
+        <Compile Include="UseElmish.fs" />
         <Compile Include="Server.fs" />
         <Compile Include="Router.fs" />
         <Compile Include="SharedView.fs" />
         <Compile Include="Pages\Index.fs" />
         <Compile Include="View.fs" />
         <Compile Include="App.fs" />
-        <Content Include="index.html" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\SAFEr.App.Shared\SAFEr.App.Shared.fsproj" />
