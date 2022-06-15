@@ -20,31 +20,26 @@ let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
 
 Target.create "InstallClient" (fun _ ->
     printfn "Node version:"
-    Tools.node "--version" clientSrcPath
+    run Tools.node "--version" clientSrcPath
     printfn "Yarn version:"
-    Tools.yarn "--version" clientSrcPath
-    Tools.yarn "install --frozen-lockfile" clientSrcPath
+    run Tools.yarn "--version" clientSrcPath
+    run Tools.yarn "install --frozen-lockfile" clientSrcPath
 )
 
 Target.create "Publish" (fun _ ->
     [ publishPath ] |> Shell.cleanDirs
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
-    Tools.dotnet publishArgs serverSrcPath
+    run Tools.dotnet publishArgs serverSrcPath
     [ appPublishPath </> "local.settings.json" ] |> File.deleteAll
-    Tools.yarn "build" ""
+    run Tools.yarn "build" ""
 )
 
 Target.create "Run" (fun _ ->
-    let server = async {
-        Tools.dotnet "watch msbuild /t:RunFunctions" serverSrcPath
-    }
-    let client = async {
-        Tools.yarn "start" ""
-    }
-    [server;client]
-    |> Async.Parallel
-    |> Async.RunSynchronously
-    |> ignore
+    [
+        "server", Tools.dotnet "watch msbuild /t:RunFunctions" serverSrcPath
+        "client", Tools.yarn "start" ""
+    ]
+    |> runParallel
 )
 
 let dependencies = [

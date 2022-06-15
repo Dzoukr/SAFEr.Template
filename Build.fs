@@ -21,10 +21,10 @@ Target.create "Publish" (fun _ ->
         |> Directory.GetFiles
         |> Seq.head
         |> Path.GetFullPath
-    Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) __SOURCE_DIRECTORY__
+    run Tools.dotnet (sprintf "nuget push %s -s nuget.org -k %s" nupkg nugetKey) __SOURCE_DIRECTORY__
 )
 
-Target.create "Pack" (fun _ -> Tools.dotnet "pack SAFEr.Template.proj -c Release -o .nupkg" __SOURCE_DIRECTORY__)
+Target.create "Pack" (fun _ -> run Tools.dotnet "pack SAFEr.Template.proj -c Release -o .nupkg" __SOURCE_DIRECTORY__)
 
 Target.create "SetVersion" (fun _ ->
     let version =

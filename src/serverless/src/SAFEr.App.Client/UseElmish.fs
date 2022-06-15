@@ -124,14 +124,24 @@ type React with
         // Initialize the program without previous state
         let state, setState = React.useState(runProgram program arg obs None)
 
+        // Store initial dependencies
+        let deps, setDeps = React.useState(dependencies)
+
         React.useEffect((fun () ->
+
             // If the component has been disposed, re-build it
             // use the last known state.
             // This make HMR support works by maintaining the state
             // We need to rebuild a new program, in order to get access
             // to the new dispatch instance
             if obs.HasDisposedOnce then
-                runProgram program arg obs (Some state) () |> setState
+                // Use only state that is valid for current dependencies
+                let state = if deps <> dependencies then None else Some state
+                runProgram program arg obs state () |> setState
+
+            // Update for dependencies is the state valid
+            dependencies |> setDeps
+
             React.createDisposable(obs.DisposeState)
         ), defaultArg dependencies [||])
 
