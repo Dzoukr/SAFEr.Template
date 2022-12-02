@@ -1,10 +1,10 @@
 ﻿module SAFEr.App.Client.View
 
 open Feliz
-open Feliz.UseElmish
 open Router
 open Elmish
 open SharedView
+open Feliz.UseElmish
 
 type private Msg =
     | UrlChanged of Page

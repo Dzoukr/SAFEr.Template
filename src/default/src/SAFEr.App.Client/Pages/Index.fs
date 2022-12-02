@@ -3,8 +3,8 @@
 open Feliz
 open Feliz.DaisyUI
 open Elmish
-open Feliz.UseElmish
 open SAFEr.App.Client.Server
+open Feliz.UseElmish
 
 type private State = {
     Message : string

@@ -31,10 +31,12 @@ Target.create "Publish" (fun _ ->
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     run Tools.dotnet publishArgs serverSrcPath
     [ appPublishPath </> "local.settings.json" ] |> File.deleteAll
+    run Tools.dotnet "fable clean --yes" ""
     run Tools.yarn "build" ""
 )
 
 Target.create "Run" (fun _ ->
+    run Tools.dotnet "fable clean --yes" ""
     [
         "server", Tools.dotnet "watch msbuild /t:RunFunctions" serverSrcPath
         "client", Tools.yarn "start" ""

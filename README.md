@@ -49,15 +49,14 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Client
 
-- Fable 3 as dotnet tool
+- Fable 4 as dotnet tool
 - Feliz + Feliz.DaisyUI as default
 - Feliz.Router for secured routing (including fallback to default page when navigating to non-existent page)
 - Feliz.UseElmish instead of full Elmish
 - TailwindCSS JIT as npm packages
 - SharedView module for helper functions to navigate to strongly typed pages
 - Public content in `public` folder
-- Webpack pre-configured to support SCSS files (from `styles/styles.css`)
-- Webpack pre-configured to correct SPA routing
+- Vite.js instead of webpack
 - Femto pre-installed
 - Yarn instead of npm used
 

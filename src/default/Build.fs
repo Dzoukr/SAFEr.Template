@@ -31,10 +31,13 @@ Target.create "Publish" (fun _ ->
     let publishArgs = sprintf "publish -c Release -o \"%s\"" appPublishPath
     run Tools.dotnet publishArgs serverSrcPath
     [ appPublishPath </> "appsettings.Development.json" ] |> File.deleteAll
+
+    run Tools.dotnet "fable clean --yes" ""
     run Tools.yarn "build" ""
 )
 
 Target.create "Run" (fun _ ->
+    run Tools.dotnet "fable clean --yes" ""
     Environment.setEnvironVar "ASPNETCORE_ENVIRONMENT" "Development"
     [
         "server", Tools.dotnet "watch run" serverSrcPath

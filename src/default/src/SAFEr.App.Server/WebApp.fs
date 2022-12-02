@@ -6,7 +6,6 @@ open Fable.Remoting.Server
 open Fable.Remoting.Giraffe
 open Microsoft.Extensions.Logging
 open SAFEr.App.Shared.API
-open FSharp.Control.Tasks
 open SAFEr.App.Shared.Errors
 
 let service = {
