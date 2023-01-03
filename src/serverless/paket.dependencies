@@ -12,8 +12,7 @@ nuget Microsoft.Azure.Functions.Worker
 nuget Fable.Core prerelease
 nuget Fable.React
 nuget Fable.Remoting.Client
-nuget Feliz prerelease
-nuget Feliz.CompilerPlugins prerelease
+nuget Feliz
 nuget Feliz.DaisyUI
 nuget Feliz.Router
 nuget Feliz.UseElmish
