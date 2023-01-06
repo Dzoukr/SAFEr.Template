@@ -8,8 +8,5 @@
     <Compile Include="BuildTools.fs" />
     <Compile Include="Build.fs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="vite.config.js" />
-  </ItemGroup>
   <Import Project=".paket\Paket.Restore.targets" />
 </Project>

@@ -93,7 +93,7 @@ NUGET
       Fable.Elmish (>= 4.0)
       Feliz (>= 2.3)
       FSharp.Core (>= 4.7.2)
-    Feliz.UseElmish (2.1)
+    Feliz.UseElmish (2.3)
       Fable.Elmish (>= 4.0)
       FSharp.Core (>= 4.7.2)
     FSharp.Core (7.0)

@@ -16,7 +16,12 @@ let serverSrcPath = srcPath </> "SAFEr.App.Server"
 let appPublishPath = publishPath </> "app"
 
 // Targets
-let clean proj = [ proj </> "bin"; proj </> "obj" ] |> Shell.cleanDirs
+let clean proj = [ proj </> "bin"; proj </> "obj"; proj </> ".fable-build" ] |> Shell.cleanDirs
+
+Target.create "Clean" (fun _ ->
+    serverSrcPath |> clean
+    clientSrcPath |> clean
+)
 
 Target.create "InstallClient" (fun _ ->
     printfn "Node version:"
@@ -36,7 +41,6 @@ Target.create "Publish" (fun _ ->
 )
 
 Target.create "Run" (fun _ ->
-    run Tools.dotnet "fable clean --yes" ""
     [
         "server", Tools.dotnet "watch msbuild /t:RunFunctions" serverSrcPath
         "client", Tools.yarn "start" ""
@@ -46,8 +50,11 @@ Target.create "Run" (fun _ ->
 
 let dependencies = [
     "InstallClient"
+        ==> "Clean"
         ==> "Publish"
+
     "InstallClient"
+        ==> "Clean"
         ==> "Run"
 ]
 
