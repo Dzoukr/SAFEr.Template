@@ -6,7 +6,7 @@ Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-
 
 Install SAFEr Template:
 
-    dotnet new --install SAFEr.Template
+    dotnet new install SAFEr.Template
 
 Create new directory for your kick-ass full-stack next-unicorn app:
 
