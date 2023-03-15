@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>3.0.0-pre-005</Version>
+    <Version>3.0.0-pre-006</Version>
     <PackageReleaseNotes>Updating Feliz dependencies + preparing for major release</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>

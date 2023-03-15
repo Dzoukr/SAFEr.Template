@@ -4,7 +4,6 @@ open Feliz
 open Feliz.UseElmish
 open Router
 open Elmish
-open SharedView
 
 type private Msg =
     | UrlChanged of Page
