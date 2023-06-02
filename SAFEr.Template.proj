@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>3.0.0</Version>
-    <PackageReleaseNotes>v3.0 major release</PackageReleaseNotes>
+    <Version>3.1.0</Version>
+    <PackageReleaseNotes>Updating Feliz.DaisyUI to the latest version</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>

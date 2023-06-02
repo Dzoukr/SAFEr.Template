@@ -28,13 +28,15 @@ let IndexView () =
 
     React.fragment [
         Html.div state.Message
-        Daisy.buttonGroup [
+        Daisy.join [
             Daisy.button.button [
+                join.item
                 button.primary
                 prop.text "Click me for success"
                 prop.onClick (fun _ -> true |> AskForMessage |> dispatch)
             ]
             Daisy.button.button [
+                join.item
                 button.secondary
                 prop.text "Click me for error"
                 prop.onClick (fun _ -> false |> AskForMessage |> dispatch)
