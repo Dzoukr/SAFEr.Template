@@ -2,8 +2,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>SAFEr.Template</PackageId>
-    <Version>3.1.0</Version>
-    <PackageReleaseNotes>Updating Feliz.DaisyUI to the latest version</PackageReleaseNotes>
+    <Version>3.2.0</Version>
+    <PackageReleaseNotes>Remove the use of the deprecated Application Insights instrumentation key</PackageReleaseNotes>
     <Authors>Roman Provazník</Authors>
     <Description>Template for SAFEr Web App</Description>
     <PackageProjectUrl>https://github.com/Dzoukr/SAFEr.Template</PackageProjectUrl>
