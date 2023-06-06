@@ -9,7 +9,7 @@ open Giraffe
 type Startup(cfg:IConfiguration, env:IWebHostEnvironment) =
     member _.ConfigureServices (services:IServiceCollection) =
         services
-            .AddApplicationInsightsTelemetry(cfg.["APPINSIGHTS_INSTRUMENTATIONKEY"])
+            .AddApplicationInsightsTelemetry()
             .AddGiraffe() |> ignore
     member _.Configure(app:IApplicationBuilder) =
         app
