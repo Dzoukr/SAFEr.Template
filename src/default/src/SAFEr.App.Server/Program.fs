@@ -3,7 +3,6 @@ module SAFEr.App.Server.Program
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.Logging
-open Microsoft.AspNetCore.Hosting
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 
@@ -26,8 +25,8 @@ let private configureApp (app:WebApplication) =
     app.UseGiraffe WebApp.webApp
     app
 
-let builderOptions = WebApplicationOptions(WebRootPath = "public")
-let builder =
+let private builderOptions = WebApplicationOptions(WebRootPath = "public")
+let private builder =
     WebApplication.CreateBuilder(builderOptions)
     |> addApplicationInsights
     |> configureLogging
