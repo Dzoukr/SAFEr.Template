@@ -5,11 +5,9 @@
     "Giraffe",
     "Azure",
     "Fable",
-    "Elmish",
-    "Serverless",
-    "Azure Functions"
+    "Elmish"
   ],
-  "name": "SAFEr Web App v3.3.0",
+  "name": "SAFEr Web App v4.0.0",
   "tags": {
     "language": "F#",
     "type": "project"
@@ -17,23 +15,10 @@
   "identity": "SAFEr.Template",
   "shortName": "SAFEr",
   "sourceName": "SAFEr.App",
-  "symbols": {
-    "serverless": {
-      "type": "parameter",
-      "dataType": "bool",
-      "defaultValue": "false"
-    }
-  },
   "sources": [
     {
-      "condition": "(!serverless)",
-      "source": "./default",
-      "exclude": "./serverless"
-    },
-    {
-      "condition": "(serverless)",
-      "source": "./serverless",
-      "exclude": "./default"
+      "condition": "true",
+      "source": "./default"
     }
   ]
 }

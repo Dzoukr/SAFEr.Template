@@ -1,6 +1,6 @@
 ﻿# SAFEr.Template [![NuGet](https://img.shields.io/nuget/v/SAFEr.Template.svg?style=flat-square)](https://www.nuget.org/packages/SAFEr.Template/)
 
-Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-stack.github.io/) for full-stack development in F#. 🔥 Now with Azure Functions (isolated) backend support!
+Strongly opinionated modification of amazing [SAFE Stack Template](https://safe-stack.github.io/) for full-stack development in F#.
 
 ## Installation
 
@@ -17,10 +17,6 @@ Bootstrap your application using Giraffe 🦒:
 
     dotnet new SAFEr
 
-Or have fully serverless backend using Azure Functions ⚡:
-
-    dotnet new SAFEr --serverless
-
 
 Restore dotnet tools:
 
@@ -34,12 +30,17 @@ Your application is now running on:
 
     http://localhost:8080 // fable frontend
     http://localhost:5000 // backend API for Giraffe
-    http://localhost:7071 // backend API for Azure Functions
 
 
 ## Disclaimer
 
 I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it's a great thing for devs to start work on F# full-stack apps. However for me, the minimal template is too minimal and the default template is too different from my preferences, so I always struggle with the need to delete/restructure many things. This template makes it right for me and my projects from the very beginning. Feel free to use it. And one more thing... This template can change every time I decide to take a different approach to F# full-stack, so stay sharp. :)
+
+## Dude, where are my Azure Functions?
+
+If you previously used this template, you may be looking for the Azure Functions template. As I no longer need this scenario and don't want to maintain it, I've removed it from the template in the v4.0.0. However, you can still use it by installing the previous version of the template:
+
+    dotnet new install SAFEr.Template --version 3.3.0
 
 ## Key differences from SAFE Stack template
 
@@ -62,7 +63,6 @@ I really love [SAFE Stack Template](https://safe-stack.github.io/) template - it
 
 ### Server
 
-- 🔥 Now with support for Azure Functions instead of Giraffe!
 - Giraffe instead of Saturn as default
 - Startup class used for ASP.NET setup
 - Application split into more files with separate `WebApp` module

@@ -14,5 +14,4 @@ export default defineConfig({
     build: {
         outDir:"../../publish/app/public"
     }
-
 })
