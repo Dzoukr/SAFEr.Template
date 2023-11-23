@@ -1,5 +1,6 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
         "prestart": "dotnet tool restore",
         "start": "dotnet fable watch ./src/SAFEr.App.Client --outDir ./src/SAFEr.App.Client/.fable-build --run vite",
