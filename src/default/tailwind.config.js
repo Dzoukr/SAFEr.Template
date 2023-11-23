@@ -1,8 +1,9 @@
-module.exports = {
+import daisyui from "daisyui";
+export default {
     content: [
-        "./src/SAFEr.App.Client/.fable-build/**/*.{js,ts,jsx,tsx}",
+        "./src/FastRefresher2.Client/.fable-build/**/*.{js,ts,jsx,tsx}",
     ],
     plugins: [
-        require('daisyui'),
+        daisyui,
     ]
 }
