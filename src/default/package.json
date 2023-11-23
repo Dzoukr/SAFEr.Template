@@ -7,10 +7,10 @@
         "build": "dotnet fable ./src/SAFEr.App.Client --outDir ./src/SAFEr.App.Client/.fable-build --run vite build"
     },
     "devDependencies": {
-        "@vitejs/plugin-react": "4.0.0",
+        "@vitejs/plugin-react": "^4.2.0",
         "autoprefixer": "^10.4.16",
         "postcss": "^8.4.31",
-        "vite": "^4.5.0"
+        "vite": "^5.0.0"
     },
     "dependencies": {
         "react": "^18.2.0",
