@@ -8,17 +8,17 @@
         "build": "dotnet fable ./src/SAFEr.App.Client --outDir ./src/SAFEr.App.Client/.fable-build --run vite build"
     },
     "devDependencies": {
-        "@vitejs/plugin-react": "^4.2.0",
-        "autoprefixer": "^10.4.16",
-        "postcss": "^8.4.31",
-        "vite": "^5.0.0"
+        "@vitejs/plugin-react": "^4.2.1",
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "vite": "^5.2.6"
     },
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "use-sync-external-store":"^1.2.0",
-        "tailwindcss":"^3.3.5",
-        "daisyui": "^4.4.2"
+        "tailwindcss":"^3.4.1",
+        "daisyui": "^4.9.0"
     }
 
 }
