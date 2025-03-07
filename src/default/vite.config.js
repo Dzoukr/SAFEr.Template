@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
-    plugins: [tailwindcss(),react({ jsxRuntime: 'classic'})], // jsxRuntime: 'classic' is required for fast-refresh for .js files
+    plugins: [react({ jsxRuntime: 'classic'}),tailwindcss()], // jsxRuntime: 'classic' is required for fast-refresh for .js files
     root: "./src/SAFEr.App.Client",
     server: {
         port: 8080,
