@@ -1,5 +1,5 @@
 source https://api.nuget.org/v3/index.json
-framework: net8.0
+framework: net9.0
 storage: none
 
 nuget Fable.Remoting.Giraffe
@@ -18,7 +18,7 @@ nuget FsToolkit.ErrorHandling.TaskResult
 
 group Build
     source https://api.nuget.org/v3/index.json
-    framework: net8.0
+    framework: net9.0
     storage: none
 
     nuget FSharp.Core

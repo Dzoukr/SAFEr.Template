@@ -12,10 +12,10 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v2
 
-      - name: Setup .NET 8 SDK
+      - name: Setup .NET 9 SDK
         uses: actions/setup-dotnet@v1.7.2
         with:
-          dotnet-version: 8.0.100
+          dotnet-version: 9.0.200
 
       - name: Install Tools
         run: dotnet tool restore
@@ -24,7 +24,7 @@ jobs:
         run: dotnet run Publish
 
       - name: Publish App
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: app
           path: publish/app
