@@ -5,11 +5,9 @@
     </PropertyGroup>
     <ItemGroup>
         <Compile Include="Server.fs" />
-        <Compile Include="Router.fs" />
         <Compile Include="Extensions.fs" />
-        <Compile Include="Pages\Index.fs" />
-        <Compile Include="View.fs" />
-        <Compile Include="App.fs" />
+        <Compile Include="app\page.fs" />
+        <Compile Include="app\layout.fs" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\SAFEr.App.Shared\SAFEr.App.Shared.fsproj" />

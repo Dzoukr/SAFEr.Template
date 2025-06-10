@@ -3,4 +3,3 @@
 @plugin "daisyui" {
     themes: all;
 }
-@source "../.fable-build/**/*.{js,ts,jsx,tsx}";

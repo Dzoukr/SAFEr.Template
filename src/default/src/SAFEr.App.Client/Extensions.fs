@@ -2,23 +2,9 @@
 module SAFEr.App.Client.Extensions
 
 open Feliz
-open Router
-
-type prop
-    with
-        static member inline hrefRouted (p:Page) =
-            [
-                prop.href (p |> Page.toUrlSegments |> Router.formatPath)
-                prop.onClick Router.goToUrl
-            ]
 
 type Html
     with
-        static member inline a (text:string, p:Page) =
-            Html.a [
-                yield! prop.hrefRouted p
-                prop.text text
-            ]
         static member inline classed fn (cn:string) (elm:ReactElement list) =
             fn [
                 prop.className cn

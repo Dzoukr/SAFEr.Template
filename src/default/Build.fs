@@ -28,7 +28,7 @@ Target.create "InstallClient" (fun _ ->
     run Tools.node "--version" clientSrcPath
     printfn "Yarn version:"
     run Tools.yarn "--version" clientSrcPath
-    run Tools.yarn "install --frozen-lockfile" clientSrcPath
+    run Tools.yarn "install --immutable" clientSrcPath
 )
 
 Target.create "Publish" (fun _ ->
@@ -45,7 +45,7 @@ Target.create "Run" (fun _ ->
     Environment.setEnvironVar "ASPNETCORE_ENVIRONMENT" "Development"
     [
         "server", Tools.dotnet "watch run" serverSrcPath
-        "client", Tools.yarn "start" ""
+        "client", Tools.yarn "dev" clientSrcPath
     ]
     |> runParallel
 )
