@@ -2,7 +2,7 @@
     "type": "module",
     "private": true,
     "scripts": {
-        "dev": "dotnet fable watch . --outDir ./.fable-build --run next dev ./.fable-build",
+        "dev": "dotnet fable watch . --outDir . --run next dev .",
         "build": "dotnet fable . --outDir . --run next build"
     },
     "devDependencies": {

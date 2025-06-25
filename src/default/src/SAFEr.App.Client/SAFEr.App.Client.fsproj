@@ -6,8 +6,14 @@
     <ItemGroup>
         <Compile Include="Server.fs" />
         <Compile Include="Extensions.fs" />
+        <Compile Include="components\test.fs" />
         <Compile Include="app\page.fs" />
         <Compile Include="app\layout.fs" />
+        <Content Include="app\globals.css" />
+        <Compile Include="app\about\page.fs" />
+        <Content Include="package.json" />
+        <Content Include="next.config.mjs" />
+        <Content Include="postcss.config.mjs" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\SAFEr.App.Shared\SAFEr.App.Shared.fsproj" />
